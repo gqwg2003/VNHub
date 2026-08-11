@@ -3,9 +3,9 @@
     z-index: 9000;
     min-width: 180px;
     background: var(--bg-surface);
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius-lg);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(124,58,237,0.05);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 1px color-mix(in srgb, var(--accent) 5%, transparent);
     padding: 4px 0;
     font-size: 13px;
     color: var(--text-primary);
@@ -22,7 +22,7 @@
 }
 
 .ctx-menu-item:hover {
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .ctx-menu-item svg {
@@ -36,7 +36,7 @@
 
 .ctx-menu-sep {
     height: 1px;
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     margin: 4px 0;
 }
 
@@ -53,7 +53,7 @@
     top: -4px;
     min-width: 160px;
     background: var(--bg-surface);
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius-lg);
     box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     padding: 4px 0;

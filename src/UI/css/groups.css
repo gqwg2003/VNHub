@@ -19,13 +19,13 @@
 }
 
 .group-item:hover {
-    background: rgba(124,58,237,0.06);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
     color: var(--text-primary);
 }
 
 .group-item.active {
     color: var(--accent-hover);
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .group-dot {
@@ -79,7 +79,7 @@
 .group-edit-btn:hover,
 .group-color-btn:hover {
     color: var(--accent-hover);
-    background: rgba(124,58,237,0.12);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .group-delete-btn:hover {
@@ -110,7 +110,7 @@
 .group-count {
     font-size: 11px;
     color: var(--text-secondary);
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     padding: 1px 6px;
     border-radius: 8px;
     min-width: 18px;
@@ -127,7 +127,7 @@
     left: 100%;
     top: 0;
     background: var(--bg-surface);
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius-lg);
     box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     padding: 8px;

@@ -25,6 +25,13 @@ public static class SettingsHandler
                 var s = Bridge.Deserialize<AppSettings>(payload);
                 if (s == null) break;
                 s.ProxyAddress = Validation.SanitizeProxy(s.ProxyAddress);
+
+                var current = SettingsService.Load();
+                if (s.IgdbClientSecret == SettingsService.MaskSecret(current.IgdbClientSecret))
+                    s.IgdbClientSecret = current.IgdbClientSecret;
+                if (s.RawgApiKey == SettingsService.MaskSecret(current.RawgApiKey))
+                    s.RawgApiKey = current.RawgApiKey;
+
                 SettingsService.Save(s);
                 AppServices.Metadata.ConfigureProxies(s.ProxyAddress);
                 Bridge.SendToJs("settingsSaved", new { ok = true, proxyAddress = s.ProxyAddress });
@@ -156,8 +163,8 @@ public static class SettingsHandler
             settings.Customization,
             settings.MetadataProvider,
             settings.IgdbClientId,
-            settings.IgdbClientSecret,
-            settings.RawgApiKey,
+            igdbClientSecret = SettingsService.MaskSecret(settings.IgdbClientSecret),
+            rawgApiKey = SettingsService.MaskSecret(settings.RawgApiKey),
             coversPath = coversDir,
             logsPath = LogService.GetLogDir(),
             appVersion = typeof(SettingsHandler).Assembly

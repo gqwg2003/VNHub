@@ -33,7 +33,10 @@ public static class LogService
                     $"[{DateTime.Now:HH:mm:ss.fff}] [{level}] {message}{Environment.NewLine}");
             }
         }
-        catch { /* avoid recursive failure */ }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"LogService.Write failed: {ex}");
+        }
     }
 
     private static void CleanOldLogs()
@@ -46,7 +49,10 @@ public static class LogService
                     File.Delete(file);
             }
         }
-        catch { }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"LogService.CleanOldLogs failed: {ex}");
+        }
     }
 
     public static string GetLogDir() => LogDir;

@@ -123,7 +123,10 @@ public static class StatsService
                         tagFreq[tag] = tc + 1;
                     }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                LogService.Error($"Failed to parse tags for entry {e.Id}", ex);
+            }
         }
         return tagFreq;
     }

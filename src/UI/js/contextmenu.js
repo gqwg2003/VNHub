@@ -8,6 +8,7 @@ function showContextMenu(x, y, entry) {
 
     const menu = document.createElement('div');
     menu.className = 'ctx-menu';
+    menu.setAttribute('role', 'menu');
 
     menu.appendChild(ctxItem(
         isRunning ? t('running') : t('launch'),
@@ -143,6 +144,8 @@ function hideContextMenu() {
 function ctxItem(label, icon, onClick, cls) {
     const el = document.createElement('div');
     el.className = 'ctx-menu-item' + (cls ? ` ${cls}` : '');
+    el.setAttribute('role', 'menuitem');
+    el.setAttribute('tabindex', '-1');
     el.innerHTML = (icon ? icon + ' ' : '') + `<span>${escapeHTML(label)}</span>`;
     el.addEventListener('click', (e) => {
         e.stopPropagation();

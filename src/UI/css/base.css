@@ -28,7 +28,7 @@
     font-size: 80px;
     color: var(--text-primary);
     letter-spacing: 6px;
-    text-shadow: 0 0 60px rgba(124, 58, 237, 0.7), 0 0 20px rgba(124, 58, 237, 0.4);
+    text-shadow: 0 0 60px color-mix(in srgb, var(--accent) 70%, transparent), 0 0 20px color-mix(in srgb, var(--accent) 40%, transparent);
     line-height: 1;
 }
 
@@ -46,11 +46,11 @@
     --bg-surface: #0E0D1B;
     --bg-elevated: #161428;
     --bg-hover: #1E1B38;
-    --border: rgba(124,58,237,0.10);
+    --border: color-mix(in srgb, var(--accent) 10%, transparent);
     --accent: #7C3AED;
     --accent-soft: #2D1B69;
     --accent-hover: #8B5CF6;
-    --accent-glow: rgba(124,58,237,0.25);
+    --accent-glow: color-mix(in srgb, var(--accent) 25%, transparent);
     --plum: #3D1A5A;
     --text-primary: #EDE8FF;
     --text-secondary: #7B72A8;
@@ -85,13 +85,13 @@
     --bg-surface: #FFFFFF;
     --bg-elevated: #EAE7F7;
     --bg-hover: #E0DCF4;
-    --border: rgba(124,58,237,0.15);
+    --border: color-mix(in srgb, var(--accent) 15%, transparent);
     --text-primary: #1A1030;
     --text-secondary: #5E4D8A;
     --accent: #6D28D9;
     --accent-soft: #DDD5FF;
     --accent-hover: #7C3AED;
-    --accent-glow: rgba(109,40,217,0.2);
+    --accent-glow: color-mix(in srgb, var(--accent) 20%, transparent);
     --plum: #EDE0FF;
     --heart: #BE185D;
     --star: #B45309;
@@ -170,8 +170,8 @@ input[type="radio"] {
     gap: 6px;
     padding: 8px 16px;
     margin-bottom: 12px;
-    background: rgba(124,58,237,0.06);
-    border: 1px solid rgba(124,58,237,0.12);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     border-radius: var(--radius-lg);
     flex-wrap: wrap;
 }
@@ -183,7 +183,7 @@ input[type="radio"] {
     font-size: 12px;
     color: var(--text-secondary);
     padding: 2px 10px;
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     border-radius: 20px;
     white-space: nowrap;
 }

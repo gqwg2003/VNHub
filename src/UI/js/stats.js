@@ -229,7 +229,7 @@ function renderRanking(elId, items, mode) {
             ? `https://covers.vnhub.local/${encodeURIComponent(item.cover)}`
             : '';
         const coverEl = coverSrc
-            ? `<img class="ranking-cover" src="${coverSrc}" alt="" loading="lazy">`
+            ? `<img class="ranking-cover" src="${coverSrc}" alt="${escapeAttr(item.title)}" loading="lazy">`
             : `<div class="ranking-cover ranking-no-cover">?</div>`;
         const value = mode === 'userRating'
             ? `${'★'.repeat(item.userRating || 0)}${'☆'.repeat(10 - (item.userRating || 0))}`

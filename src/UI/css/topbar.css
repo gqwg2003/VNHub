@@ -11,7 +11,7 @@
     gap: 4px;
     padding: 0 24px;
     background: var(--bg-surface);
-    border-bottom: 1px solid rgba(124,58,237,0.08);
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .marked-tab {
@@ -29,7 +29,7 @@
     padding: 0 20px;
     gap: 10px;
     background: color-mix(in srgb, var(--bg-surface) calc(var(--panel-surface-opacity) * 100%), transparent);
-    border-bottom: 1px solid rgba(124,58,237,0.07);
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 7%, transparent);
 }
 
 .topbar::before {
@@ -62,14 +62,14 @@
     height: 38px;
     background: var(--bg-elevated);
     border-radius: 24px;
-    border: 1px solid rgba(124,58,237,0.12);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     color: var(--text-secondary);
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .topbar-search:focus-within {
-    border-color: rgba(124,58,237,0.5);
-    box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .topbar-search:focus-within svg {
@@ -97,7 +97,7 @@
     padding: 8px 16px;
     border: none;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, #7C3AED, #6D28D9);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
     color: white;
     font-size: 13.5px;
     font-family: inherit;
@@ -105,13 +105,13 @@
     cursor: pointer;
     transition: all var(--transition);
     margin-left: auto;
-    box-shadow: 0 2px 12px rgba(124,58,237,0.35);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 35%, transparent);
     white-space: nowrap;
 }
 
 .btn-add:hover {
-    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
-    box-shadow: 0 4px 20px rgba(124,58,237,0.5);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-hover) 85%, white), var(--accent-hover));
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 50%, transparent);
     transform: translateY(-1px);
 }
 
@@ -126,7 +126,7 @@
     height: 34px;
     padding: 6px 10px;
     padding-right: 28px;
-    border: 1px solid rgba(124,58,237,0.12);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     border-radius: var(--radius);
     background-color: var(--bg-elevated);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237B72A8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
@@ -144,13 +144,13 @@
 }
 
 .topbar-select:focus {
-    border-color: rgba(124,58,237,0.5);
-    box-shadow: 0 0 0 3px rgba(124,58,237,0.10);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .grid-toggle {
     display: flex;
-    border: 1px solid rgba(124,58,237,0.12);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     border-radius: var(--radius);
     overflow: hidden;
     background: var(--bg-elevated);
@@ -170,7 +170,7 @@
 }
 
 .grid-toggle-btn:hover {
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     color: var(--text-primary);
 }
 
@@ -190,7 +190,7 @@
     align-items: center;
     gap: 6px;
     padding: 6px 12px;
-    border: 1px solid rgba(124,58,237,0.12);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     border-radius: var(--radius);
     background: var(--bg-elevated);
     color: var(--text-secondary);
@@ -204,8 +204,8 @@
 
 .btn-tags:hover {
     color: var(--text-primary);
-    border-color: rgba(124,58,237,0.4);
-    background: rgba(124,58,237,0.06);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 .tag-dropdown {
@@ -218,9 +218,9 @@
     max-height: 360px;
     overflow-y: auto;
     background: var(--bg-surface);
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius-lg);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,58,237,0.05);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px color-mix(in srgb, var(--accent) 5%, transparent);
     z-index: 80;
     padding: 6px;
 }
@@ -248,11 +248,11 @@
 }
 
 .tag-dropdown-item:hover {
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .tag-dropdown-item.active {
-    background: rgba(124,58,237,0.12);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
     color: var(--accent-hover);
 }
 
@@ -327,7 +327,7 @@
     justify-content: center;
     width: 34px;
     height: 34px;
-    border: 1px solid rgba(124,58,237,0.12);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
     border-radius: var(--radius);
     background: var(--bg-elevated);
     color: var(--text-secondary);
@@ -337,8 +337,8 @@
 }
 
 .btn-sort-dir:hover {
-    border-color: rgba(124,58,237,0.4);
-    background: rgba(124,58,237,0.08);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     color: var(--text-primary);
 }
 

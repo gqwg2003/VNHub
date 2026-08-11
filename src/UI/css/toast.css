@@ -16,8 +16,8 @@
     padding: 10px 16px;
     border-radius: var(--radius-lg);
     background: var(--bg-surface);
-    border: 1px solid rgba(124,58,237,0.12);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,58,237,0.05);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5), 0 0 0 1px color-mix(in srgb, var(--accent) 5%, transparent);
     color: var(--text-primary);
     font-size: 13px;
     pointer-events: auto;

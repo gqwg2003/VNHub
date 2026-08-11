@@ -15,7 +15,7 @@
     background: var(--bg-surface);
     border-radius: var(--radius-lg);
     padding: 18px 16px;
-    border: 1px solid rgba(124,58,237,0.08);
+    border: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
     display: flex;
     align-items: center;
     gap: 14px;
@@ -35,11 +35,11 @@
 }
 .stat-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.35), 0 0 0 1px rgba(124,58,237,0.12);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35), 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .stat-card-accent {
-    background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(124,58,237,0.06) 100%);
-    border-color: rgba(124,58,237,0.14);
+    background: linear-gradient(135deg, var(--bg-surface) 0%, color-mix(in srgb, var(--accent) 6%, transparent) 100%);
+    border-color: color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
 .stat-card-icon {
@@ -50,7 +50,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    background: rgba(124,58,237,0.10);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
     color: var(--stat-accent, var(--accent));
 }
 .stat-card-icon svg {
@@ -93,7 +93,7 @@
     background: var(--bg-surface);
     border-radius: var(--radius-lg);
     padding: 20px;
-    border: 1px solid rgba(124,58,237,0.07);
+    border: 1px solid color-mix(in srgb, var(--accent) 7%, transparent);
 }
 .stats-panel h3 {
     margin: 0 0 16px;
@@ -141,9 +141,9 @@
     background: rgba(255,255,255,0.05);
 }
 .stats-period-btn.active {
-    background: linear-gradient(135deg, #7C3AED, #6D28D9);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
     color: #fff;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.35);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .stats-ranking {
@@ -297,7 +297,7 @@
 .stats-chart-bar {
     width: 100%;
     max-width: 40px;
-    background: linear-gradient(180deg, var(--accent) 0%, rgba(124,58,237,0.4) 100%);
+    background: linear-gradient(180deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 40%, transparent) 100%);
     border-radius: 4px 4px 0 0;
     min-height: 4px;
     transition: height 0.4s ease;
@@ -332,11 +332,11 @@
 .achievement.unlocked {
     opacity: 1;
     filter: none;
-    background: rgba(124,58,237,0.06);
-    border: 1px solid rgba(124,58,237,0.14);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
 }
 .achievement.unlocked:hover {
-    box-shadow: 0 4px 16px rgba(124,58,237,0.15);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .achievement-header {
@@ -364,7 +364,7 @@
 }
 .achievement.unlocked .achievement-icon {
     color: var(--accent-hover);
-    background: rgba(124,58,237,0.12);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .achievement-info {
     display: flex;

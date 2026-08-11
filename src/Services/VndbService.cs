@@ -23,7 +23,8 @@ public static class VndbService
         _currentProxy = addr;
         var old = Http;
         Http = CreateClient(addr);
-        old?.Dispose();
+        // delay disposal so requests already in flight on the old client aren't disrupted
+        _ = Task.Delay(TimeSpan.FromSeconds(30)).ContinueWith(_ => old?.Dispose());
     }
 
     private static HttpClient CreateClient(string? proxyAddress)
@@ -115,6 +116,8 @@ public static class VndbService
         }
     }
 
+    private const long MaxCoverBytes = 25 * 1024 * 1024;
+
     public static async Task<(string? FileName, string? Error)> DownloadCoverAsync(string imageUrl, string vnId, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrEmpty(imageUrl)) return (null, "No image URL");
@@ -127,9 +130,14 @@ public static class VndbService
             if (!response.IsSuccessStatusCode)
                 return (null, $"HTTP {(int)response.StatusCode} from {imageUrl}");
 
+            if (response.Content.Headers.ContentLength is long declaredLength && declaredLength > MaxCoverBytes)
+                return (null, $"Image too large ({declaredLength} bytes)");
+
             var bytes = await response.Content.ReadAsByteArrayAsync(dlCts.Token);
             if (bytes.Length < 100)
                 return (null, $"Image too small ({bytes.Length} bytes)");
+            if (bytes.Length > MaxCoverBytes)
+                return (null, $"Image too large ({bytes.Length} bytes)");
 
             var coversDir = VnHub.Common.AppPaths.EnsureCoversDir();
 
@@ -142,6 +150,8 @@ public static class VndbService
             };
 
             var fileName = $"{vnId}{ext}";
+            if (!PathGuard.IsSafeFileName(fileName, ".jpg", ".png", ".webp"))
+                return (null, "Invalid VN id");
             var filePath = Path.Combine(coversDir, fileName);
             await File.WriteAllBytesAsync(filePath, bytes);
 

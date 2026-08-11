@@ -29,7 +29,8 @@ public static class LauncherService
             if (_tracked.ContainsKey(vnId))
             {
                 var existing = _tracked[vnId];
-                try { if (!existing.HasExited) return true; } catch { }
+                try { if (!existing.HasExited) return true; }
+                catch (Exception ex) { LogService.Error($"Failed to check process state for '{vnId}'", ex); }
             }
         }
 

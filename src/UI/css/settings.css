@@ -31,7 +31,7 @@
 .settings-input {
     flex: 1;
     padding: 8px 12px;
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius);
     background: var(--bg-elevated);
     color: var(--text-primary);
@@ -43,13 +43,13 @@
 
 .settings-input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .settings-textarea {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius);
     background: var(--bg-elevated);
     color: var(--text-primary);
@@ -62,12 +62,12 @@
 }
 .settings-textarea:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .theme-btn {
     padding: 8px 20px;
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: var(--radius);
     background: var(--bg-elevated);
     color: var(--text-secondary);
@@ -78,10 +78,10 @@
 }
 
 .theme-btn.active {
-    background: linear-gradient(135deg, #7C3AED, #6D28D9);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
     color: white;
     border-color: transparent;
-    box-shadow: 0 2px 12px rgba(124,58,237,0.35);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .settings-about {
@@ -121,7 +121,7 @@
     font-family: var(--font-mono);
     color: var(--text-primary);
     background: var(--bg-elevated);
-    border: 1px solid rgba(124,58,237,0.2);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     min-width: 24px;
@@ -165,7 +165,7 @@
     padding: 8px 12px;
     background: var(--bg-elevated);
     border-radius: var(--radius);
-    border: 1px solid rgba(124,58,237,0.08);
+    border: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .backup-info {
@@ -197,7 +197,7 @@
     padding: 8px 12px;
     background: var(--bg-elevated);
     border-radius: var(--radius);
-    border: 1px solid rgba(124,58,237,0.08);
+    border: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .custom-font-item.active {
@@ -267,7 +267,7 @@
     height: 6px;
     -webkit-appearance: none;
     appearance: none;
-    background: rgba(124,58,237,0.15);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: 3px;
     outline: none;
     cursor: pointer;
@@ -281,18 +281,18 @@
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(124,58,237,0.5);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .custom-slider::-webkit-slider-thumb:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 12px rgba(124,58,237,0.7);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
 .custom-slider::-moz-range-track {
     height: 6px;
-    background: rgba(124,58,237,0.15);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: 3px;
 }
 
@@ -303,13 +303,13 @@
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(124,58,237,0.5);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .custom-slider::-moz-range-thumb:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 12px rgba(124,58,237,0.7);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
 .custom-slider:disabled {

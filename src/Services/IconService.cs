@@ -156,7 +156,10 @@ public static class IconService
                 return versionInfo.ProductName.Trim();
             }
         }
-        catch { }
+        catch (Exception ex)
+        {
+            LogService.Error($"Failed to read version info from '{exePath}'", ex);
+        }
 
         var name = Path.GetFileNameWithoutExtension(exePath);
         foreach (var suffix in new[] { "_x64", "_x86", "-x64", "-x86", "_en", "_jp", " - Shortcut" })

@@ -157,9 +157,9 @@
     <div class="detail-overlay" id="detailOverlay"></div>
     <aside class="detail-panel" id="detailPanel"></aside>
 
-    <div class="modal-overlay" id="addModal" style="display:none;">
+    <div class="modal-overlay" id="addModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
         <div class="modal">
-            <h3 data-i18n="addTitle">Add Visual Novel</h3>
+            <h3 id="addModalTitle" data-i18n="addTitle">Add Visual Novel</h3>
             <div class="modal-field">
                 <label data-i18n="titleLabel">Title (auto-filled from .exe if empty)</label>
                 <input type="text" id="addTitle" class="detail-input" placeholder="Leave blank to use exe name" autofocus data-i18n-placeholder="titlePlaceholder">
@@ -184,9 +184,9 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="deleteModal" style="display:none;">
+    <div class="modal-overlay" id="deleteModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
         <div class="modal modal-small">
-            <h3 data-i18n="deleteTitle">Delete Entry?</h3>
+            <h3 id="deleteModalTitle" data-i18n="deleteTitle">Delete Entry?</h3>
             <p data-i18n="deleteMessage">This will permanently remove this VN from your library.</p>
             <div class="modal-buttons">
                 <button class="btn-secondary" id="btnDeleteCancel" data-i18n="cancel">Cancel</button>
@@ -195,7 +195,7 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="promptModal" style="display:none;">
+    <div class="modal-overlay" id="promptModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="promptModalTitle">
         <div class="modal modal-small">
             <h3 id="promptModalTitle"></h3>
             <div class="modal-field">
@@ -208,7 +208,7 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="confirmModal" style="display:none;">
+    <div class="modal-overlay" id="confirmModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
         <div class="modal modal-small">
             <h3 id="confirmModalTitle"></h3>
             <p id="confirmModalText"></p>
@@ -219,9 +219,9 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="scanModal" style="display:none;">
+    <div class="modal-overlay" id="scanModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="scanModalTitle">
         <div class="modal modal-wide">
-            <h3 data-i18n="scanTitle">Scan Folder</h3>
+            <h3 id="scanModalTitle" data-i18n="scanTitle">Scan Folder</h3>
             <div class="scan-status" id="scanStatus" style="display:none;">
                 <svg class="scan-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
                 <span data-i18n="scanning">Scanning...</span>
@@ -234,9 +234,9 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="bulkDeleteModal" style="display:none;">
+    <div class="modal-overlay" id="bulkDeleteModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="bulkDeleteModalTitle">
         <div class="modal modal-small">
-            <h3 data-i18n="bulkDeleteTitle">Delete Selected?</h3>
+            <h3 id="bulkDeleteModalTitle" data-i18n="bulkDeleteTitle">Delete Selected?</h3>
             <p id="bulkDeleteText"></p>
             <div class="modal-buttons">
                 <button class="btn-secondary" id="btnBulkDeleteCancel" data-i18n="cancel">Cancel</button>

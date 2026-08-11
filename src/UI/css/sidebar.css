@@ -4,7 +4,7 @@
     min-width: var(--sidebar-width);
     height: 100vh;
     background: color-mix(in srgb, var(--bg-surface) calc(var(--panel-surface-opacity) * 100%), transparent);
-    border-right: 1px solid rgba(124,58,237,0.08);
+    border-right: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
     display: flex;
     flex-direction: column;
     padding: 16px 12px;
@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     height: 140px;
-    background: radial-gradient(ellipse at 50% -10%, rgba(124,58,237,0.18) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% -10%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -55,11 +55,11 @@
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    text-shadow: 0 0 20px rgba(124,58,237,0.5);
+    text-shadow: 0 0 20px color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .sidebar-logo svg {
-    filter: drop-shadow(0 0 6px rgba(124,58,237,0.6));
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 60%, transparent));
 }
 
 .sidebar-nav {
@@ -86,20 +86,20 @@
 }
 
 .nav-btn:hover {
-    background: rgba(124,58,237,0.07);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
     color: var(--text-primary);
-    border-left-color: rgba(124,58,237,0.3);
+    border-left-color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .nav-btn.active {
-    background: rgba(124,58,237,0.10);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
     color: var(--text-primary);
     border-left-color: var(--accent);
 }
 
 .nav-btn.active svg {
     color: var(--accent-hover);
-    filter: drop-shadow(0 0 4px rgba(124,58,237,0.4));
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--accent) 40%, transparent));
 }
 
 @media (max-width: 800px) {
@@ -160,7 +160,7 @@
 }
 
 .sidebar-collapse-btn:hover {
-    background: rgba(124,58,237,0.08);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
     color: var(--text-primary);
 }
 
@@ -194,7 +194,7 @@
 
 .sidebar.collapsed .nav-btn.active {
     border-left: none;
-    background: rgba(124,58,237,0.12);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .sidebar.collapsed .sidebar-footer {

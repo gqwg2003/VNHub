@@ -263,7 +263,7 @@ function setTagFilter(tag) {
     });
 
     const dd = document.getElementById('tagDropdown');
-    if (dd) dd.classList.remove('open');
+    if (dd) closeTagDropdown(dd);
 }
 
 function getAllTags() {
@@ -271,12 +271,22 @@ function getAllTags() {
     return [];
 }
 
+let _tagDropdownCloseHandler = null;
+
+function closeTagDropdown(dd) {
+    dd.classList.remove('open');
+    if (_tagDropdownCloseHandler) {
+        document.removeEventListener('click', _tagDropdownCloseHandler);
+        _tagDropdownCloseHandler = null;
+    }
+}
+
 function toggleTagDropdown() {
     const dd = document.getElementById('tagDropdown');
     if (!dd) return;
 
     if (dd.classList.contains('open')) {
-        dd.classList.remove('open');
+        closeTagDropdown(dd);
         return;
     }
 
@@ -310,7 +320,7 @@ function renderTagDropdown(dd) {
                 const tag = btn.dataset.tag;
                 if (state.activeTag && state.activeTag.toLowerCase() === tag.toLowerCase()) {
                     clearTagFilter();
-                    dd.classList.remove('open');
+                    closeTagDropdown(dd);
                 } else {
                     setTagFilter(tag);
                 }
@@ -320,13 +330,15 @@ function renderTagDropdown(dd) {
 
     dd.classList.add('open');
 
-    const closeHandler = (e) => {
+    if (_tagDropdownCloseHandler) {
+        document.removeEventListener('click', _tagDropdownCloseHandler);
+    }
+    _tagDropdownCloseHandler = (e) => {
         if (!dd.contains(e.target) && e.target.id !== 'btnTagDropdown' && !e.target.closest('#btnTagDropdown')) {
-            dd.classList.remove('open');
-            document.removeEventListener('click', closeHandler);
+            closeTagDropdown(dd);
         }
     };
-    setTimeout(() => document.addEventListener('click', closeHandler), 0);
+    setTimeout(() => document.addEventListener('click', _tagDropdownCloseHandler), 0);
 }
 
 function cardHTML(entry) {
@@ -337,7 +349,7 @@ function cardHTML(entry) {
         : '';
 
     const coverEl = coverSrc
-        ? `<img class="vn-card-cover" src="${escapeAttr(coverSrc)}?t=${entry.coverPath}" alt="" loading="lazy">`
+        ? `<img class="vn-card-cover" src="${escapeAttr(coverSrc)}?t=${entry.coverPath}" alt="${escapeAttr(entry.title)}" loading="lazy">`
         : `<div class="vn-card-cover-placeholder">
             ${ICONS.imagePlaceholder}
            </div>`;

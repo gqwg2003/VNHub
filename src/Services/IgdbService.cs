@@ -24,9 +24,14 @@ public class IgdbService : MetadataServiceBase
 
         try
         {
-            var url = $"https://id.twitch.tv/oauth2/token?client_id={Uri.EscapeDataString(clientId)}&client_secret={Uri.EscapeDataString(clientSecret)}&grant_type=client_credentials";
+            using var content = new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                ["client_id"] = clientId,
+                ["client_secret"] = clientSecret,
+                ["grant_type"] = "client_credentials"
+            });
             using var cts = LinkedTimeout(ct, TimeSpan.FromSeconds(15));
-            var resp = await Http.PostAsync(url, null, cts.Token);
+            var resp = await Http.PostAsync("https://id.twitch.tv/oauth2/token", content, cts.Token);
             if (!resp.IsSuccessStatusCode) return null;
 
             var json = await resp.Content.ReadAsStringAsync(cts.Token);

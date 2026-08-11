@@ -272,7 +272,7 @@ public static class CustomizationHandler
             var name = Path.GetFileName(f);
             if (name.StartsWith(slotPrefix + "_bg.", StringComparison.OrdinalIgnoreCase))
             {
-                try { File.Delete(f); } catch { }
+                try { File.Delete(f); } catch (Exception ex) { LogService.Error($"Failed to delete stale background '{f}'", ex); }
             }
         }
 

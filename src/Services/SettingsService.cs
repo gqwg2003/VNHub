@@ -109,4 +109,11 @@ public static class SettingsService
             File.Move(tempPath, SettingsPath, overwrite: true);
         }
     }
+
+    public static string MaskSecret(string? secret)
+    {
+        if (string.IsNullOrEmpty(secret)) return "";
+        if (secret.Length <= 4) return new string('\u2022', 4);
+        return new string('\u2022', 4) + secret[^4..];
+    }
 }
