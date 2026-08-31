@@ -2,6 +2,7 @@ const LANG = {
     en: LANG_EN,
     ru: LANG_RU,
     ja: LANG_JA,
+    zh: LANG_ZH,
 };
 
 let currentLang = 'en';

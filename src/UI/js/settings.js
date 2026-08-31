@@ -46,7 +46,7 @@ function initSettings() {
         state.settings.language = e.target.value;
         setLanguage(e.target.value);
         saveSettingsFromUI();
-        document.getElementById('langMachineTranslationHint').style.display = e.target.value === 'ja' ? '' : 'none';
+        document.getElementById('langMachineTranslationHint').style.display = ['ja', 'zh'].includes(e.target.value) ? '' : 'none';
     });
 
     bindOnce(document.getElementById('btnExportLibrary'), 'click', () => {
@@ -256,7 +256,7 @@ function renderSettings() {
     document.getElementById('settingsDbPath').value = s.dbPath || '';
     document.getElementById('settingsCoversPath').value = s.coversPath || '';
     document.getElementById('settingsLanguage').value = s.language || 'en';
-    document.getElementById('langMachineTranslationHint').style.display = (s.language === 'ja') ? '' : 'none';
+    document.getElementById('langMachineTranslationHint').style.display = (s.language === 'ja' || s.language === 'zh') ? '' : 'none';
     document.querySelectorAll('.theme-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.theme === s.theme);
     });

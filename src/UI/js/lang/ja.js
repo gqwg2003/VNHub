@@ -645,4 +645,5 @@ const LANG_JA = {
     importSettingsConfirm: 'インポートすると現在の設定が置き換えられます。続行しますか?',
     settingsExported: '設定のエクスポート先:',
     settingsImported: '設定が正常にインポートされました。',
+    machineTranslationHint: 'この翻訳は機械翻訳であり、不正確な箇所が含まれる場合があります。',
 };
