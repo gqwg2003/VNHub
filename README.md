@@ -1,3 +1,7 @@
+# This is a trial version. The full-featured app is under development.
+# And it differs in the technology stack and name. [ VnHub > VNStudio ] [ HTML / CSS / JavaScript / C#  > C++ Lua ]
+
+
 # VnHub
 
 A modern visual novel library manager for Windows. Organize your collection, track
